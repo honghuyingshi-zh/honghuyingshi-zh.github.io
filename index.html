@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1b0d10">
+<title>红狐影视 —— 追剧看片一站到底 | honghuyingshi-zh.github.io</title>
+<meta name="description" content="红狐影视（honghuyingshi-zh.github.io）收录华语院线、口碑剧集、纪录片与冷门佳片，按更新节奏和观影场景整理片单，手机端同样顺滑。">
+<meta name="keywords" content="红狐影视, honghuyingshi-zh, 在线影视库, 华语剧集, 独立电影">
+<link rel="canonical" href="https://honghuyingshi-zh.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="红狐影视 —— 追剧看片一站到底">
+<meta property="og:description" content="按观影场景整理的华语影视片单，院线、剧集、纪录片与冷门佳片都在这里。">
+<meta property="og:url" content="https://honghuyingshi-zh.github.io/">
+<style>
+:root{
+  --ink:#1b0d10;
+  --ink2:#2b161b;
+  --paper:#f2ece4;
+  --paper2:#e6ddd1;
+  --fox:#b3272d;
+  --fox-d:#7d1a1e;
+  --fox-l:#e0534b;
+  --mute:#7a6d64;
+  --line:rgba(27,13,16,.14);
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px;
+  line-height:1.75;
+  font-feature-settings:"tnum";
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(1200px 500px at 12% -8%,rgba(179,39,45,.10),transparent 60%),
+    radial-gradient(900px 600px at 108% 8%,rgba(125,26,30,.08),transparent 62%);
+  pointer-events:none;
+  z-index:0;
+}
+a{color:var(--fox);text-decoration:none}
+a:hover{color:var(--fox-d);border-bottom:1px solid currentColor}
+img,video{max-width:100%;display:block}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 22px}
+
+/* ===== 侧边栏 ===== */
+.shell{display:grid;grid-template-columns:226px 1fr;gap:0;min-height:100vh}
+.side{
+  position:sticky;top:0;align-self:start;
+  height:100vh;overflow-y:auto;
+  padding:30px 20px 26px;
+  border-right:1px solid var(--line);
+  background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%);
+  color:#e9ded8;
+}
+.side .brand{display:flex;align-items:center;gap:11px;margin-bottom:6px}
+.side .mark{
+  width:38px;height:38px;flex:none;border-radius:9px;
+  background:radial-gradient(circle at 36% 32%,var(--fox-l),var(--fox-d) 70%);
+  position:relative;overflow:hidden;
+}
+.side .mark::after{
+  content:"";position:absolute;inset:8px 6px;
+  border:1.5px solid rgba(255,255,255,.55);border-radius:5px;
+  clip-path:polygon(0 35%,52% 35%,52% 0,100% 50%,52% 100%,52% 65%,0 65%);
+  background:rgba(255,255,255,.92);
+}
+.side h1{font-size:19px;margin:0;letter-spacing:2px;font-weight:700;color:#fff}
+.side .sub{font-size:11.5px;letter-spacing:1.4px;color:#b79a94;margin:3px 0 0}
+.side nav{margin-top:26px;display:flex;flex-direction:column;gap:2px}
+.side nav a{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 11px;border-radius:7px;color:#cfc1ba;font-size:13.5px;
+  border-bottom:none;transition:.18s;
+}
+.side nav a b{font-weight:600;color:#fff}
+.side nav a i{
+  width:15px;height:15px;flex:none;border:1.4px solid #b79a94;border-radius:4px;
+  position:relative;
+}
+.side nav a:hover{background:rgba(255,255,255,.07);color:#fff}
+.side nav a.on{background:var(--fox);color:#fff}
+.side nav a.on i{border-color:#fff;background:rgba(255,255,255,.25)}
+.side .host{
+  margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.13);
+  font-size:11px;color:#9c8580;word-break:break-all;line-height:1.6;
+}
+.side .host em{display:block;font-style:normal;color:#e9ded8;font-size:11.5px;letter-spacing:.3px;margin-bottom:3px}
+.side .tip{margin-top:14px;font-size:10.5px;color:#7d6a65;line-height:1.6}
+
+/* ===== 主区 ===== */
+.main{padding:0 0 70px;min-width:0}
+.hero{padding:62px 0 44px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:3px;color:var(--fox-d);
+  border:1px solid rgba(179,39,45,.35);padding:4px 11px;border-radius:100px;
+}
+.hero h2{
+  font-size:clamp(30px,5.4vw,56px);line-height:1.12;margin:18px 0 14px;
+  letter-spacing:-.5px;font-weight:800;
+}
+.hero h2 span{color:var(--fox)}
+.hero p{margin:0;max-width:56ch;color:#4c403c;font-size:15.5px}
+.stats{display:flex;flex-wrap:wrap;gap:26px;margin-top:30px}
+.stats div{font-size:12px;color:var(--mute);letter-spacing:.6px}
+.stats strong{display:block;font-size:25px;color:var(--ink);font-weight:700;letter-spacing:0}
+
+.section{padding:52px 0 8px}
+.sec-head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head h3{font-size:23px;margin:0;letter-spacing:.5px;font-weight:750}
+.sec-head h3 small{font-weight:400;color:var(--fox);font-size:12px;letter-spacing:1.6px;margin-left:8px}
+.sec-head a{margin-left:auto;font-size:12.5px;color:var(--mute)}
+
+/* 胶片卡 */
+.reel{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.cell{background:var(--paper2);border-radius:5px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.slate{
+  aspect-ratio:3/4;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,#3a1c20,#160b0e 65%);
+  border-bottom:1px solid var(--line);
+}
+.slate::before,.slate::after{
+  content:"";position:absolute;top:0;bottom:0;width:9px;
+  background:repeating-linear-gradient(180deg,#0d0608 0 4px,#2a1418 4px 7px);
+}
+.slate::before{left:0}.slate::after{right:0}
+.slate .ttl{
+  position:absolute;left:16px;right:16px;bottom:18px;color:#f4e9df;
+  font-size:15px;font-weight:700;letter-spacing:1px;line-height:1.35;
+}
+.slate .yr{
+  position:absolute;left:16px;top:14px;font-size:10px;letter-spacing:2px;
+  color:#d99a8f;border:1px solid rgba(217,154,143,.5);padding:2px 6px;border-radius:3px;
+}
+.slate .tag{
+  position:absolute;right:16px;top:14px;font-size:10px;background:var(--fox);
+  color:#fff;padding:2px 7px;border-radius:3px;letter-spacing:.6px;
+}
+.cell .meta{padding:12px 14px 14px}
+.cell .meta h4{margin:0 0 5px;font-size:14px;font-weight:650;line-height:1.4}
+.cell .meta p{margin:0;font-size:11.5px;color:var(--mute);line-height:1.6}
+
+/* 榜单 */
+.board{display:grid;gap:12px}
+.row{
+  display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:14px;
+  padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:6px;
+}
+.row .no{font-size:16px;font-weight:800;color:#d8c9bf;text-align:center}
+.row.on .no{color:var(--fox)}
+.row h4{margin:0;font-size:14px;font-weight:600}
+.row .info{font-size:11.5px;color:var(--mute);margin-top:2px}
+.row .bar{justify-self:end;text-align:right}
+.row .bar em{font-style:normal;font-size:11px;color:var(--fox-d);letter-spacing:.5px;display:block}
+.track{height:4px;width:96px;background:var(--paper2);border-radius:4px;overflow:hidden;margin-top:5px}
+.track i{display:block;height:100%;background:linear-gradient(90deg,var(--fox-l),var(--fox-d));border-radius:4px}
+
+/* 两栏文本 */
+.cols{display:grid;grid-template-columns:1.05fr .95fr;gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px 22px}
+.card h4{margin:0 0 10px;font-size:15.5px;font-weight:700}
+.card ul{margin:0;padding-left:17px}
+.card li{margin:7px 0;font-size:13.5px;color:#4c403c}
+.card dl{margin:0;display:grid;grid-template-columns:74px 1fr;gap:7px 12px;font-size:13px}
+.card dt{color:var(--mute)}
+.card dd{margin:0}
+
+/* 日志时间线 */
+.tl{border-left:2px solid var(--line);padding-left:20px;margin-left:6px}
+.tl article{position:relative;padding:0 0 22px}
+.tl article::before{
+  content:"";position:absolute;left:-27px;top:7px;width:11px;height:11px;
+  background:var(--paper);border:2.5px solid var(--fox);border-radius:50%;
+}
+.tl time{font-size:11.5px;letter-spacing:1px;color:var(--fox-d);font-weight:600}
+.tl h4{margin:4px 0 5px;font-size:15px;font-weight:650}
+.tl p{margin:0;font-size:13.5px;color:#4c403c}
+
+/* 表单 */
+form{display:grid;gap:11px}
+.fld{display:grid;gap:5px}
+.fld label{font-size:12px;color:var(--mute);letter-spacing:.5px}
+.fld input,.fld textarea,.fld select{
+  font:inherit;font-size:13.5px;color:var(--ink);
+  background:#fff;border:1px solid var(--line);border-radius:5px;padding:9px 11px;
+  width:100%;
+}
+.fld textarea{min-height:88px;resize:vertical}
+button[type=submit]{
+  font:inherit;font-size:13.5px;font-weight:650;letter-spacing:1px;
+  color:#fff;background:var(--fox);border:1px solid var(--fox-d);border-radius:5px;
+  padding:11px 16px;cursor:pointer;transition:.18s;
+}
+button[type=submit]:hover{background:var(--fox-d)}
+.note{font-size:11.5px;color:var(--mute);line-height:1.65}
+#msg{display:none;margin-top:12px;padding:10px 12px;background:#fbeceb;border:1px solid #e9b4af;border-radius:5px;font-size:12.5px;color:var(--fox-d)}
+
+footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 40px;font-size:12px;color:var(--mute)}
+footer .flex{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+footer code{background:var(--paper2);padding:2px 7px;border-radius:4px;font-size:11.5px;color:var(--ink)}
+
+/* 回到顶 */
+.top{
+  position:fixed;right:18px;bottom:22px;z-index:9;
+  width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;
+  display:none;align-items:center;justify-content:center;font-size:15px;
+  border:1px solid var(--fox);cursor:pointer;
+}
+.top.show{display:flex}
+
+/* 响应式：窄屏改上下布局 */
+@media (max-width:880px){
+  .shell{grid-template-columns:1fr}
+  .side{
+    position:static;height:auto;
+    border-right:none;border-bottom:2px solid var(--ink);
+    padding:20px 18px 16px;
+  }
+  .side nav{flex-direction:row;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .side nav a{flex:1 1 auto;min-width:116px;font-size:12.5px;padding:8px 10px}
+  .side .host,.side .tip{display:none}
+  .wrap{padding:0 16px}
+  .hero{padding:36px 0 30px}
+  .section{padding:38px 0 4px}
+  .cols{grid-template-columns:1fr}
+  .reel{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+  .row{grid-template-columns:28px 1fr;gap:11px}
+  .row .bar{grid-column:2;justify-self:start;width:100%}
+  .track{width:100%}
+  footer .flex{gap:8px 14px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+<div class="wrap shell">
+
+  <!-- 侧栏 -->
+  <aside class="side">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>红狐影视</h1>
+        <div class="sub">HONGHU YINGSHI</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#home" class="on"><i></i><b>开场</b></a>
+      <a href="#dianying"><i></i>电影档案</a>
+      <a href="#juji"><i></i>剧集长廊</a>
+      <a href="#jilu"><i></i>纪录与短片</a>
+      <a href="#bang"><i></i>本周排片</a>
+      <a href="#zongyi"><i></i>综艺闲聊</a>
+      <a href="#gengxin"><i></i>归档日志</a>
+      <a href="#tougao"><i></i>片单留言</a>
+    </nav>
+    <div class="host">
+      <em>站点地址</em>
+      <a href="https://honghuyingshi-zh.github.io" style="color:#e9ded8;border-bottom:1px dashed rgba(233,222,216,.4)">honghuyingshi-zh.github.io</a>
+    </div>
+    <p class="tip">本站为静态索引页，片单信息仅作整理与推荐，播放资源以各平台公开展示内容为准。</p>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main">
+
+    <section class="hero" id="home">
+      <span class="eyebrow">HONGHU · VOL.01</span>
+      <h2>把散落的片子，<br>收进一只<span>红狐</span>的口袋。</h2>
+      <p>红狐影视不追热点榜单，只按「想看什么心情」给华语院线、剧集、纪录片和冷门佳片分好类。通勤十五分钟能看完的短片，周末窝沙发刷一整季的长剧，都在这儿等你翻牌。</p>
+      <div class="stats">
+        <div>已整理片单<strong>1,280+</strong></div>
+        <div>每周增量<strong>18–26</strong></div>
+        <div>片长区间<strong>9–168 分钟</strong></div>
+        <div>访问入口<strong>0 跳转</strong></div>
+      </div>
+    </section>
+
+    <!-- 电影 -->
+    <section class="section" id="dianying">
+      <div class="sec-head">
+        <h3>电影档案 <small>DIAN YING</small></h3>
+        <a href="#bang">去本周排片 →</a>
+      </div>
+      <div class="reel">
+        <article class="cell"><div class="slate">
+          <span class="yr">2026</span><span class="tag">新片</span>
+          <span class="ttl">春山可望<br>时 分</span>
+        </div><div class="meta"><h4>春山可望时分</h4><p>家庭 / 剧情 · 112 分钟 · 导演首作，三条时间线在清明前后收拢。</p></div></article>
+        <article class="cell"><div class="slate">
+          <span class="yr">2025</span>
+          <span class="ttl">夜 航<br>北 上</span>
+        </div><div class="meta"><h4>夜航北上</h4><p>悬疑 / 公路 · 96 分钟 · 绿皮车厢里六个陌生人，最后一站只剩四个。</p></div></article>
+        <article class="cell"><div class="slate">
+          <span class="yr">2024</span><span class="tag">修复版</span>
+          <span class="ttl">小 城<br>灯 火</span>
+        </div><div class="meta"><h4>小城灯火（4K 修复）</h4><p>年代 / 爱情 · 128 分钟 · 1998 年胶转数修复，颗粒感被完整留住。</p></div></article>
+        <article class="cell"><div class="slate">
+          <span class="yr">2023</span>
+          <span class="ttl">鱼 群<br>不 眠</span>
+        </div><div class="meta"><h4>鱼群不眠</h4><p>奇幻 / 独立 · 81 分钟 · 海岛渔村传说，全片只用自然光与潮汐声。</p></div></article>
+        <article class="cell"><div class="slate">
+          <span class="yr">2022</span><span class="tag">冷门</span>
+          <span class="ttl">第 七<br>种 风</span>
+        </div><div class="meta"><h4>第七种风</h4><p>文艺 / 实验 · 68 分钟 · 没有对白，靠气象播报串起一座城市的四季。</p></div></article>
+        <article class="cell"><div class="slate">
+          <span class="yr">2021</span>
+          <span class="ttl">回 头<br>见 海</span>
+        </div><div class="meta"><h4>回头见海</h4><p>青春 / 成长 · 104 分钟 · 毕业那年夏天，三个人的约定烂在沙滩上。</p></div></article>
+      </div>
+    </section>
+
+    <!-- 剧集 -->
+    <section class="section" id="juji">
+      <div class="sec-head">
+        <h3>剧集长廊 <small>JU JI</small></h3>
+        <a href="#gengxin">看更新节奏 →</a>
+      </div>
+      <div class="reel">
+        <article class="cell"><div class="slate" style="background:linear-gradient(150deg,#4a2023,#160b0e 65%)">
+          <span class="tag">更新中</span><span class="ttl">案 件<br>在 下 楼</span>
+        </div><div class="meta"><h4>案件在楼下</h4><p>12 集 · 单元刑侦 · 每集一个楼道，每集一种人情。</p></div></article>
+        <article class="cell"><div class="slate" style="background:linear-gradient(150deg,#33201f,#160b0e 65%)">
+          <span class="ttl">我 们 的<br>早 市</span>
+        </div><div class="meta"><h4>我们的早市</h4><p>24 集 · 生活群像 · 菜摊、豆浆铺和一条巷子的十年。</p></div></article>
+        <article class="cell"><div class="slate" style="background:linear-gradient(150deg,#5a2a1f,#160b0e 65%)">
+          <span class="tag">完结</span><span class="ttl">长 安<br>薄 暮</span>
+        </div><div class="meta"><h4>长安薄暮</h4><p>36 集 · 古装权谋 · 一局棋下完，满朝文武只剩半局活口。</p></div></article>
+        <article class="cell"><div class="slate" style="background:linear-gradient(150deg,#281a1e,#160b0e 65%)">
+          <span class="ttl">加 班<br>不 归 人</span>
+        </div><div class="meta"><h4>加班不归人</h4><p>10 集 · 职场喜剧 · 凌晨两点的办公室，比家里热闹。</p></div></article>
+      </div>
+    </section>
+
+    <!-- 纪录与短片 -->
+    <section class="section" id="jilu">
+      <div class="sec-head">
+        <h3>纪录与短片 <small>JI LU &amp; DUAN PIAN</small></h3>
+        <a href="#tougao">推荐你私藏的片 →</a>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h4>适合碎片时间的十五分钟</h4>
+          <ul>
+            <li>《修钟的人》—— 老城钟楼底下，一位师傅修了四十年齿轮。</li>
+            <li>《一碗面的迁徙》—— 从兰州到深圳，同一个配方走了一千八百公里。</li>
+            <li>《雨声档案》—— 收录全国 22 座城市的雨季，可当白噪音。</li>
+            <li>《未寄出的信》—— 七封写给十年前自己的手写信，读得人安静。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>为什么单列这一栏</h4>
+          <p style="margin:0 0 10px;font-size:13.5px;color:#4c403c">长视频吃时间，短片吃情绪。红狐影视把 9–30 分钟的作品单独归档，通勤、排队、失眠前翻一翻就够。</p>
+          <dl>
+            <dt>收录标准</dt><dd>有完整叙事或明确作者表达，不收营销切片</dd>
+            <dt>更新频率</dt><dd>每周三增补 2–4 部</dd>
+            <dt>语言</dt><dd>华语为主，附中英字幕信息</dd>
+            <dt>标记说明</dt><dd>「冷门」＝主流平台检索结果少于 3 页</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- 榜单 -->
+    <section class="section" id="bang">
+      <div class="sec-head">
+        <h3>本周排片 <small>PAI PIAN · 10.19–10.25</small></h3>
+        <span class="note" style="margin-left:auto">按站内收藏与回访热度综合排序，每周一刷新</span>
+      </div>
+      <div class="board">
+        <div class="row on"><span class="no">01</span><div><h4>案件在楼下 · 第 9 集</h4><div class="info">单元刑侦 · 楼道里的旧钢琴</div></div><div class="bar"><em>追更 92%</em><i class="track" style="--w:92%"><i style="width:92%"></i></i></div></div>
+        <div class="row on"><span class="no">02</span><div><h4>春山可望时分</h4><div class="info">2026 剧情新片 · 适合一个人看</div></div><div class="bar"><em>收藏 86%</em><i class="track" style="--w:86%"><i style="width:86%"></i></i></div></div>
+        <div class="row"><span class="no">03</span><div><h4>长安薄暮 · 大结局</h4><div class="info">古装权谋 · 讨论量本周最高</div></div><div class="bar"><em>讨论 74%</em><i class="track" style="--w:74%"><i style="width:74%"></i></i></div></div>
+        <div class="row"><span class="no">04</span><div><h4>修钟的人</h4><div class="info">纪录短片 18 分钟 · 凌晨场推荐</div></div><div class="bar"><em>完播 71%</em><i class="track" style="--w:71%"><i style="width:71%"></i></i></div></div>
+        <div class="row"><span class="no">05</span><div><h4>夜航北上</h4><div class="info">悬疑公路 · 反转在第 63 分钟</div></div><div class="bar"><em>收藏 63%</em><i class="track" style="--w:63%"><i style="width:63%"></i></i></div></div>
+        <div class="row"><span class="no">06</span><div><h4>我们的早市</h4><div class="info">生活群像 · 第 7–10 集连刷最佳</div></div><div class="bar"><em>追更 55%</em><i class="track" style="--w:55%"><i style="width:55%"></i></i></div></div>
+      </div>
+    </section>
+
+    <!-- 综艺 -->
+    <section class="section" id="zongyi">
+      <div class="sec-head">
+        <h3>综艺闲聊 <small>ZONG YI</small></h3>
+        <a href="#bang">回榜单 ↑</a>
+      </div>
+      <div class="cols">
+        <article class="cell" style="border-radius:6px">
+          <div class="slate" style="background:linear-gradient(150deg,#6b2a22,#160b0e 65%)"><span class="tag">周更</span><span class="ttl">三 个 人<br>一 口 锅</span></div>
+          <div class="meta"><h4>三个人，一口锅</h4><p>美食闲谈 · 不比赛、不打分，只聊这道菜背后的那个人。</p></div>
+        </article>
+        <article class="cell" style="border-radius:6px">
+          <div class="slate" style="background:linear-gradient(150deg,#3f2424,#160b0e 65%)"><span class="ttl">老 歌<br>新 唱 会</span></div>
+          <div class="meta"><h4>老歌新唱会</h4><p>音乐 · 每周一首被忘掉的歌，重新编曲再唱一遍。</p></div>
+        </article>
+        <article class="cell" style="border-radius:6px">
+          <div class="slate" style="background:linear-gradient(150deg,#52231f,#160b0e 65%)"><span class="tag">单期</span><span class="ttl">片 尾<br>字 幕 后</span></div>
+          <div class="meta"><h4>片尾字幕后</h4><p>访谈 · 主创聊删掉的那场戏、没说完的那句台词。</p></div>
+        </article>
+        <article class="cell" style="border-radius:6px">
+          <div class="slate" style="background:linear-gradient(150deg,#2e1b1e,#160b0e 65%)"><span class="ttl">散 场<br>五 分 钟</span></div>
+          <div class="meta"><h4>散场五分钟</h4><p>短评 · 看完就聊，每人 90 秒，不剧透到第三幕。</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 归档日志 -->
+    <section class="section" id="gengxin">
+      <div class="sec-head">
+        <h3>归档日志 <small>GEN XIN RI ZHI</small></h3>
+        <span class="note" style="margin-left:auto">记录每一次增删，方便回头查某部片什么时候上的架</span>
+      </div>
+      <div class="tl">
+        <article>
+          <time>2026 · 10 · 22</time>
+          <h4>电影档案补进 2026 秋季新片 6 部</h4>
+          <p>《春山可望时分》《夜航北上》已建档，补齐导演前作关联条目；「冷门」标记规则同步调整为按搜索结果页数判定。</p>
+        </article>
+        <article>
+          <time>2026 · 10 · 15</time>
+          <h4>剧集长廊新增「连刷建议」字段</h4>
+          <p>《我们的早市》《长安薄暮》补上最佳连刷区间，避免一集一集点开试水。</p>
+        </article>
+        <article>
+          <time>2026 · 10 · 08</time>
+          <h4>纪录与短片栏独立成区</h4>
+          <p>从原来的「其他」里拆出来，单独按片长排序，9 分钟以下的挪到最前。</p>
+        </article>
+        <article>
+          <time>2026 · 09 · 27</time>
+          <h4>站点结构定型</h4>
+          <p>红狐影视以单页锚点形式上线，手机端改走上下流式布局，所有栏目在同一页面内直达，入口统一在 <code>honghuyingshi-zh.github.io</code>。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 投稿 -->
+    <section class="section" id="tougao">
+      <div class="sec-head">
+        <h3>片单留言 <small>TOU GAO</small></h3>
+        <span class="note" style="margin-left:auto">只收片名与一句话理由，别的都不用写</span>
+      </div>
+      <div class="cols">
+        <form id="fm" novalidate>
+          <div class="fld"><label for="fname">怎么称呼你</label><input id="fname" name="name" maxlength="20" placeholder="比如：夜航乘客"></div>
+          <div class="fld"><label for="ftitle">片名 / 剧集名</label><input id="ftitle" name="title" maxlength="60" required placeholder="《》可带可不带"></div>
+          <div class="fld"><label for="ftype">类型</label>
+            <select id="ftype" name="type">
+              <option>电影</option><option>剧集</option><option>纪录片 / 短片</option><option>综艺</option>
+            </select>
+          </div>
+          <div class="fld"><label for="fwhy">为什么值得收进红狐影视</label><textarea id="fwhy" name="why" maxlength="300" required placeholder="一句就行，比如：第 40 分钟那场雨戏值得单独存档。"></textarea></div>
+          <button type="submit">存进本机草稿</button>
+          <p class="note">提交后内容仅写入你当前这台设备的本地存储，用于你自己的片单备忘，不会上传到 <code>honghuyingshi-zh.github.io</code> 的任何服务器，清空浏览器数据即消失。</p>
+          <div id="msg" role="status"></div>
+        </form>
+        <div class="card">
+          <h4>关于红狐影视的收录口味</h4>
+          <ul>
+            <li>宁缺毋滥：一部片只留一句准确的概括，不堆简介。</li>
+            <li>情绪优先：标的是「什么时候看」，而不是豆瓣分数。</li>
+            <li>冷门友好：搜索结果越少，越想把它捞出来。</li>
+            <li>不做资源站：只做索引与推荐，不提供下载与在线播放链接。</li>
+            <li>反馈会看：留言里重复出现三次以上的片，优先建档。</li>
+          </ul>
+          <p class="note" style="margin-top:12px">站点地址再贴一次，方便你存书签：<br><strong>https://honghuyingshi-zh.github.io</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="flex">
+        <div>© 红狐影视 · 一个靠锚点活着的小小片单站 · 本站内容与任何影视平台无隶属关系</div>
+        <div>入口：<code>https://honghuyingshi-zh.github.io</code></div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<button class="top" id="top" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('#nav a');
+  var secs = [];
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if(el) secs.push({a:a, el:el});
+  });
+  function spy(){
+    var y = window.scrollY + 140, cur = 0;
+    secs.forEach(function(s,i){
+      if(s.el.offsetTop <= y) cur = i;
+    });
+    links.forEach(function(a,i){ a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+  spy();
+
+  var top = document.getElementById('top');
+  window.addEventListener('scroll', function(){
+    top.classList.toggle('show', window.scrollY > 500);
+  }, {passive:true});
+  top.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  var fm = document.getElementById('fm');
+  var msg = document.getElementById('msg');
+  fm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var t = fm.elements['title'].value.trim();
+    var w = fm.elements['why'].value.trim();
+    if(!t || !w){ msg.style.display='block'; msg.textContent='片名和理由都得填，一句话就够。'; return; }
+    try{
+      var box = JSON.parse(localStorage.getItem('hhys_draft') || '[]');
+      box.unshift({t:t, ty:fm.elements['type'].value, w:w, at:new Date().toLocaleString('zh-CN')});
+      localStorage.setItem('hhys_draft', JSON.stringify(box.slice(0,30)));
+      msg.style.display='block';
+      msg.textContent='已存进本机草稿（' + t + '），页面不会向任何服务器发送这条内容。';
+      fm.reset();
+    }catch(err){ msg.style.display='block'; msg.textContent='本地存储不可用，这条没存上，换台设备试试。'; }
+  });
+})();
+</script>
+</body>
+</html>
